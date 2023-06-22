@@ -36,7 +36,7 @@ const Dashboard = () => {
     "https://jsonplaceholder.typicode.com/posts",
     fetcher
   );
-  
+
   console.log(data);
 
   return <div>Dashboard</div>;

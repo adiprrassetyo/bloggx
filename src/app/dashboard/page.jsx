@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
   //OLD WAY TO FETCH DATA
@@ -28,7 +30,9 @@ const Dashboard = () => {
   //   };
   //   getData();
   // }, []);
+  const session = useSession();
 
+  const router = useRouter();
   //NEW WAY TO FETCH DATA
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 

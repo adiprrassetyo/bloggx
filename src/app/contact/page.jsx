@@ -3,6 +3,11 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Button from "@/components/Button/Button";
 
+export const metadata = {
+  title: "Dumb Dev Contact Infotmation",
+  description: "This is Contact Information",
+};
+
 const Contact = () => {
   return (
     <div className={styles.container}>

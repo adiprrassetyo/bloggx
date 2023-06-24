@@ -31,6 +31,7 @@ const Dashboard = () => {
   //   getData();
   // }, []);
   const session = useSession();
+  console.log(session);
 
   const router = useRouter();
   //NEW WAY TO FETCH DATA

@@ -6,6 +6,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const Login = () => {
+  const session = useSession();
+  const router = useRouter();
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (session.status === "authenticated") {
+    router?.push("/dashboard");
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +29,7 @@ const Login = () => {
   };
   return (
     <div className={styles.container}>
-        <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
           placeholder="Email"

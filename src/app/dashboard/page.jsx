@@ -78,6 +78,17 @@ const Dashboard = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`/api/posts/${id}`, {
+        method: "DELETE",
+      });
+      mutate();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   if (session.status === "authenticated") {
     return (
       <div className={styles.container}>
@@ -90,7 +101,12 @@ const Dashboard = () => {
                     <Image src={post.img} alt="" width={200} height={100} />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span className={styles.delete}>X</span>
+                  <span
+                    className={styles.delete}
+                    onClick={() => handleDelete(post._id)}
+                  >
+                    X
+                  </span>
                 </div>
               ))}
         </div>

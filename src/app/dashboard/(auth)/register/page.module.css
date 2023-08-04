@@ -1,53 +1,30 @@
 .container {
   display: flex;
-  gap: 100px;
-}
-
-.posts {
-  flex: 1;
-}
-
-.post {
-  display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
-  justify-content: space-between;
-  margin: 50px 0px;
+  justify-content: center;
 }
 
-.imgContainer {
-  width: 200px;
-  height: 100px;
-  position: Ū;
-}
-
-.img {
-  object-fit: cover;
-}
-
-.delete {
-  cursor: pointer;
-  color: red;
-}
-
-.new {
-  flex: 1;
+.form {
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.input,
-.textArea {
-  padding: 10px;
+.input {
+  padding: 20px;
   background-color: transparent;
   border: 2px solid #bbb;
-  border-radius: 3px;
   color: #bbb;
+  border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .button {
+  width: 300px;
   padding: 20px;
   cursor: pointer;
   background-color: #53c28b;
